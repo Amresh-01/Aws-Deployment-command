@@ -33,4 +33,27 @@ sudo systemctl enable nginx
 
 # Check Nginx status
 sudo systemctl status nginx
+
+# make folder on ubuntu machine
+mkdir → make directory
+-p → create parent folders if not exist
+/var/www/express-app → folder path for your app
+
+sudo mkdir -p /var/www/express-app
+
+```
+
+
+## 4. Clone the project from git on the Ec2 ubuntu machine 
+```bash
+# Clone Repo
+ sudo git clone https://github.com/Amresh-01/Notes-App.git
+ backend folder mai
+ sudo npm i
+```
+
+
+## 5. Configure Nginx as Reverse Proxy
+```bash
+ sudo nano /etc/nginx/sites-available/express-app
 ```
