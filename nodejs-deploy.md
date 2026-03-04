@@ -174,8 +174,8 @@ In your GitHub repository, go to Settings → Secrets and variables → Actions 
 
 Add These Secrets
 
-**EC2_HOST - Your EC2 public IP address:**
-**EC2_USERNAME - EC2 user (ubuntu for Ubuntu AMI):**
+**EC2_HOST - Your EC2 public IP address:**<br>
+**EC2_USERNAME - EC2 user (ubuntu for Ubuntu AMI):**<br>
 **EC2_SSH_KEY - Your private SSH key content:**
 
 ```bash
