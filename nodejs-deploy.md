@@ -547,3 +547,46 @@ jobs:
 
           rm private_key.pem  
 ```
+
+## If you want to change http to https domain then go by the following steps.
+
+### Step 1.
+Get Domain first then update your domain current ip with public ip which you have on aws.<br><br>
+<b>And in security tab do this
+| Type  | Port | Source    |
+| ----- | ---- | --------- |
+| HTTPS | 443  | 0.0.0.0/0 |
+
+
+### Step2. 
+ sudo nano /etc/nginx/sites-available/express-app
+ 
+ ```bash
+ server {
+    listen 80;
+    server_name api-amreshhhhhh.duckdns.org; #your domain name
+
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+
+        proxy_connect_timeout 60s;
+        proxy_send_timeout 60s;
+        proxy_read_timeout 60s;
+    }
+}
+```
+### Step 3.
+
+sudo nginx -t <br>
+
+sudo systemctl restart nginx
+
+sudo certbot --nginx -d api-amreshhhhhh.duckdns.org (domain name)
