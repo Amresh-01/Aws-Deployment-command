@@ -1,6 +1,6 @@
 # Deploy backand on AWS EC2 Ubuntu Machine
 
-backend ko isi folder mai rakhna hai.<br>
+backend ko isi folder mai rakhna hai. As production purpose.<br>
 /var/www/express-app
 
 ### 1. Update & Upgrade System
