@@ -1,4 +1,4 @@
-# Deploy backand on AWS EC2 Ubuntu Machine
+# Deploy backand on AWS EC2 Ubuntu Machine with CI CD pipeline
 
 backend ko isi folder mai rakhna hai. As production purpose.<br>
 /var/www/express-app
