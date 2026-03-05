@@ -1,0 +1,48 @@
+Ansible is Automation Tool. It uses yml.
+
+Ansible uses YAML because it is:
+- Human-readable
+- Simple
+- Declarative
+- Easy to write and understand
+
+
+1. Module
+-> Small Programs to do a Task
+    eg. Dictionary of Employees
+Employees:
+    john:
+      age: 30
+      department: Sales
+    jane:
+      age: 25
+      department: marketin
+
+2. Inventory
+-> Server ki detail hoti.
+
+
+3. Playbook
+-> To install web server on remote server
+  eg.
+name: Install Apache web server
+hosts: webservers
+become: true
+tasks:
+  - name: Install Apache2
+    apt:
+      name: apache2
+      state: present
+
+We can add multiple modules in a Playbook.
+
+
+install: - sudo apt-get install ansible 
+ansible --version
+
+sudo vi /etc/ansible/hosts
+
+ansible all -m ping
+
+//Hey Ansible, go to all my web servers, install nginx if it’s not already installed, and use sudo privileges.
+ansible web -m apt -a "name-nginx" "state-present" --become
