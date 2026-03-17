@@ -56,6 +56,7 @@ sudo mkdir -p /var/www/express-app
 
 ### 5. Configure Nginx as Reverse Proxy
 ```bash
+ cd ~
  sudo nano /etc/nginx/sites-available/express-app
 
  
